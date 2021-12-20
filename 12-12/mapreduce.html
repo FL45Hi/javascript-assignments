@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getSquare(item) {
+            return item * item
+        }
+        const numbers = [1, 2, 3, 4];
+        const squareOfNumbers = numbers.map(getSquare);
+        console.log(squareOfNumbers); // [1, 4, 9, 16]
+        
+        // function getSum(result, item) {
+        //  return result + item
+        // }
+        // const numbers = [1, 2, 3, 4];
+        // const sumOfNumbers = numbers.reduce(getSum, 0);
+        // console.log(sumOfNumbers); // 10
+        
+        // function isGreaterThanTwo(item) {
+        //  return item > 2
+        // }
+        // const numbers = [1, 2, 3, 4];
+        // var greaterThanTwoArray = numbers.filter(isGreaterThanTwo);
+        // console.log(greaterThanTwoArray); // [3,4]
+    </script>
+</body>
+</html>
+
