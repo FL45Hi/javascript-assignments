@@ -1,0 +1,70 @@
+<!-- 
+    Handle event propgation for DOM structure
+    i.e, div->button->img       handle click evt with bubbling
+    and also try & click event with capturing hierarchy
+
+    <div style="padding:30px">
+        <button>
+            <img src="image.jpg" alt="" style="width: 100px; height: 100px;"></img>
+        </button>
+     </div>
+    
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>bubbling & capturing</title>
+ </head>
+ <body>
+
+     <div id="divi" style="padding:30px;">
+        <Button id="btn">
+            <img id="image" src='https://wallpapercave.com/wp/wp3533791.jpg' style="width: 100px; height: 100px;"></img>
+        </Button>
+
+    </div>
+
+    <script>
+
+        const $ = function(id){
+            return document.getElementById(id);
+        }
+
+        var div = $('divi');
+        var button = $('btn');
+        var img = $('image');
+
+        // Bubbling example
+        div.addEventListener('click', function(){
+            alert('hello from div');
+        }, false);
+
+        button.addEventListener('click', function(){
+            alert('hello from button');
+        }, false);
+
+        img.addEventListener('click', function(){
+            alert('hello from Img');
+        }, false);
+
+        // Capturing example
+        div.addEventListener('click', function(){
+            alert('hello from div');
+        }, true);
+
+        button.addEventListener('click', function(){
+            alert('hello from button');
+        }, true);
+
+        img.addEventListener('click', function(){
+            alert('hello from Img');
+        }, false);
+
+    </script>
+
+ </body>
+ </html>

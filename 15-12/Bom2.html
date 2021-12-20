@@ -1,0 +1,32 @@
+<!-- inner and outer window sizes -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">        
+    </head>
+    <body>
+        <button id='btnInner'>Inner_Height_Width</button>
+        <button id='btnOuter'>Outer_Height_Width</button>
+        <kp id='paraInner'></p>
+        <p id='paraOuter'></p>
+        <script>
+            function $(id){
+                return document.getElementById(id);
+            }
+            $('btnInner').onclick = function(){
+                var w = window.innerWidth;
+                var h = window.innerHeight;
+                $('paraInner').innerHTML = 'Width: '+w+'<br/> Height: '+h;
+            }
+            $('btnOuter').onclick = function(){
+                var w = window.outerWidth;
+                var h = window.outerHeight;
+                $('paraOuter').innerHTML = 'Width: '+w+'<br/> Height: '+h;
+            }
+        </script>
+    </body>
+</html>
+

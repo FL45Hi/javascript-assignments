@@ -1,0 +1,70 @@
+<!-- 
+    Create a table. & perform below tasks
+    1. Give an alternate background colors to rows.
+    2. Header should have bold font
+    3. Give alternate text color to color elements.
+    4. Last ele of each column should have italic font 
+    5. first elem of each row should have underlined font style.
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Table - Dom</title>
+     <style>
+         th{
+             padding: 5px 18px;
+         }
+     </style>
+ </head>
+ <body>
+      <table style="padding: 20px; text-align: center;">
+        <thead>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Job</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Robin</td>
+                <td>Pune</td>
+                <td>E-Commerce</td>
+            </tr>
+            <tr>
+                <td>Mickey</td>
+                <td>Goa</td>
+                <td>CA</td>
+            </tr>
+            <tr>
+                <td>Demon</td>
+                <td>mumbai</td>
+                <td>SDE</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+     <script>
+        
+        var tr = document.querySelectorAll('tr');
+        var td = document.querySelectorAll('td')
+
+        for(let i = 0; i < tr.length; i += 2){
+            tr[i].style.backgroundColor = "grey";
+        }
+        for(let i = 0; i < tr.length; i++){
+            tr[i].firstElementChild.style.textDecoration = "underline";
+            tr[i].lastChild.previousSibling.style.fontStyle = "italic";
+        }
+
+        for(let i = 0; i < td.length; i += 2){
+            td[i].style.color = "blue";
+        }
+
+     </script>
+ </body>
+ </html>

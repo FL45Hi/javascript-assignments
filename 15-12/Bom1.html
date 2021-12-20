@@ -1,0 +1,44 @@
+<!-- location, history and navigator -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>    
+    <p id='para1'></p>
+    <a href="https://www.google.co.in">Google</a><br/><br/>
+    <button id='btnFwd'>Go Forward</button>
+    <script>
+         function $(id) {
+            return document.getElementById(id);
+        }
+
+        // navigator - object which contains information about browser
+        // for(var i in navigator.plugins){
+        //     document.write('<br/>'+navigator.plugins[i].name)
+        // }
+
+        // location
+       
+         $('para1').innerHTML = '<br/> Page Location is ' +
+             window.location.href;
+         $('para1').innerHTML += '<br/> Page Hostname is ' +
+             window.location.hostname;
+         $('para1').innerHTML += '<br/> Page Path is ' +
+             window.location.pathname;
+         $('para1').innerHTML += '<br/> Page Protocol is ' +
+             window.location.protocol;
+
+        // history
+        $('btnFwd').onclick = function(){
+            window.history.forward();
+        }
+    </script>
+</body>
+</html>
+
