@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        span{
+            font-size:xx-large;
+            color:rebeccapurple;
+            background-color:  aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <span id='timer'></span>
+
+    <script>
+        // Timer - is one of the input devices - as many as timers you want
+        //setTimeout(function(){ // only once after whatever time specified in miliseconds
+            var timerId = setInterval(function(){ // again and again after whatever time specified in miliseconds
+            var d1 = new Date();
+            var hours = d1.getHours();
+            var mins = d1.getMinutes();
+            var seconds = d1.getSeconds();
+            //document.write(hours+':'+mins+":"+seconds);
+
+            document.getElementById('timer').innerHTML 
+                = hours+':'+mins+":"+seconds;
+
+        },1000)
+    </script>
+</body>
+</html>
