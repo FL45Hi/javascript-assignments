@@ -1,0 +1,73 @@
+<!-- Spread operator looks exactly like the rest operator, but it works exactly opposite to rest operator. 
+    Spread operator convert the items of an iterable into arguments of a function call or into elements of an Array.
+    Unlike rest operator, spread operator can be used anywhere in a sequence of parts.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. concat array
+
+        const arr1 = ['coffee', 'tea', 'milk']
+        const arr2 = ['juice', 'smoothie']
+        // Without spread
+        var beverages = arr1.concat(arr2)
+        // With spread
+        var beverages = [...arr1, ...arr2]
+        // result
+        // ['coffee', 'tea', 'milk', 'juice', 'smoothie']
+
+
+        // 2. Make copy of array
+
+        const arr3 = ['coffee', 'tea', 'milk']
+        // Without spread
+        var arr1Copy = arr3.slice()
+        // With spread
+        const arr2Copy = [...arr3]
+
+
+        // 3. Remove duplicate entries from Array
+
+        const arr4 = ['coffee', 'tea', 'milk', 'coffee', 'milk']
+        // Without spread
+        // Iterate over the array add it to object as property
+        // If value present in the object skip it
+        // Else push it to another array
+        // With spread
+        const arr3Copy = [...new Set(arr4)]
+        // result
+        // ['coffee', 'tea', 'milk']
+
+
+        // 4. Convert string to array
+
+        const myBeverage = 'tea'
+        // Without spread
+        var arr = myBeverage.split('')
+        // With spread
+        var arr = [ ...myBeverage]
+        // result
+        // ['t', 'e', 'a']
+
+        // 5. Find min max
+
+        // Without spread
+        var max = Math.max(3, 2, 1, 5, -10)
+        // With spread
+        var myNums = [3, 2, 1, 5, -10]
+        var max = Math.max(...myNums)
+        // result
+        // 5
+
+
+    </script>
+</body>
+</html>

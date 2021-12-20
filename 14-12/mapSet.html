@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Sets 
+        var s = new Set();
+        s.add("hello").add("goodbye").add("hello");
+        s.size === 2;
+        s.has("hello")  === true;           // true, Set(2) {'hello', 'goodbye'}
+
+        console.log(s);
+
+        //Maps 
+        var m = new Map();
+        m.set("hello", 42);
+        m.set(s, 34);
+        m.get(s) == 34;                     // true, Map(2) {'hello' => 42, Array(2) => 34}
+
+        console.log(m);
+
+        //Weak Maps
+        var wm = new WeakMap();
+        wm.set(s, {extra: 42});
+        wm.size === undefined;
+
+        console.log(wm);
+
+    </script>
+</body>
+</html>
