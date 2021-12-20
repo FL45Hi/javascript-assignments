@@ -1,1 +1,125 @@
+<!-- 
+    Problem Statement
+    Design a simple calculator. Use Unobtrusive approach for event handling
+    1. Add, substract, divide, multiple buttons to display values in result box.
+    2. clear button to clear the result box
+    3. result button to display final result.
+ -->
 
+
+
+<!-- eventListener, switch used -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      div {
+        text-align: center;
+        margin: 10px 20px;
+      }
+      input,
+      button {
+        outline: none;
+        padding: 5px;
+        border: 1px dashed skyblue;
+      }
+      select {
+        border-radius: 50%;
+        padding: 5px;
+        outline: none;
+        border: 1px solid gray;
+        height: 3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Calculator</h2>
+    <div>
+      <label>Enter first number: </label><br />
+      <input type="number" id="firstNumber" value="1" />
+    </div>
+    <div>
+      <select name="operation" id="operation">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+    </div>
+    <div>
+      <label>Enter Second number: </label><br />
+      <input type="number" id="secondNumber" value="1" />
+    </div>
+    <div>
+      <button id="cal">calculate</button>
+      <span id="result"></span>
+    </div>
+
+    <script>
+
+        const $ = function(id){
+            return document.getElementById(id);
+        }
+
+        function calculate(num1, num2, op){
+            switch(op){
+                case '+': return num1 + num2;
+                case '-': return num1 - num2;
+                case '*': return num1 * num2;
+                case '/': return num1 / num2;
+            }
+        }
+
+        var operation = $('operation');
+        var firstInput = $('firstNumber');
+        var secondInput = $('secondNumber');
+        var btn = $('cal');
+        var result = $('result');
+
+        var num1 = parseFloat(firstInput.value);
+        var num2 = parseFloat(secondInput.value);
+        var op = operation.value;
+        
+
+        operation.addEventListener('change', function(e){
+            op = e.target.value;             
+        })
+
+        firstInput.addEventListener('change', function(e){
+            num1 = e.target.value;
+        });
+
+        secondInput.addEventListener('change', function(e){
+            num2 = e.target.value;
+        })
+
+        btn.addEventListener('click', function(){
+            var txt = btn.innerText;
+            if(txt === 'calculate'){
+                btn.innerText = 'clear';
+                result.innerText = "result is: " + calculate(Number(num1), Number(num2), op);
+            }
+            else if(txt === 'clear'){
+                btn.innerText = 'calculate';
+                result.innerText = "";
+            }
+            
+        });
+        console.log(typeof result);
+    </script>
+  </body>
+</html>

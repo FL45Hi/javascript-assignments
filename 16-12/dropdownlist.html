@@ -1,0 +1,69 @@
+<!-- 
+    Problem statement
+    Create Drop downlist. Count & display items of that dropdown list
+    and display in alert window.
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Dropdown List</title>
+     <style>
+        * {
+          box-sizing: border-box;
+        }
+        div {
+          margin: 30px;
+        }
+        input,
+        button {
+          outline: none;
+          padding: 5px;
+          border: 1px dashed skyblue;
+        }
+        select {
+          padding: 10px 15px;
+          outline: none;
+          border: 1px solid gray;
+        }
+      </style>
+ </head>
+ <body>
+    <div>
+    <h1>Select from the below dropdown</h1>
+    <select name="dropdown" id="dropdown">
+        <option value="1Element">first</option>
+        <option value="2Element">second</option>
+        <option value="3Element">third</option>
+        <option value="4Element">forth</option>
+        <option value="5Element">fifth</option>
+        <option value="6Element">sixth</option>
+    </select>
+    <button id="clickBtn">Total number of dropdown items</button>
+    </div>
+
+    <script>
+        const $ = function(id){
+            return document.getElementById(id);
+        }
+
+        var btn = $('clickBtn');
+        btn.addEventListener('click', function(){
+            var list = $('dropdown');
+
+            var listLen = list.options.length;
+            var items = [];
+
+            for(let i = 0; i < list.options.length; i++){
+                items.push(list[i].text);
+            } 
+            alert("Dropdown length is: " + listLen  + " and  the  \n elements are: " + items);
+        });
+
+    </script>
+ </body>
+ </html>
