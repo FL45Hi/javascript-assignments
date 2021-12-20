@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise examples...</title>
+  </head>
+  <body>
+    <script>
+      getSomeResult = () => {
+        let result = confirm("Do you really want to leave this page?");
+        alert(result ? "Thanks for visiting" : "Thanks for staying with us");
+        return result;
+      };
+
+      foo = () => {
+        return new Promise((resolve, reject) => {
+          let result = getSomeResult();
+          console.log(result);
+          result ? resolve("Success") : reject("Something went wrong");
+        });
+      };
+
+      /* 
+  "Then is the resolve defined in promise, and variable "result" is the one passed from the promise"
+  catch is the reject:*/
+
+      foo()
+        .then((result) => {
+          console.log(result); //Success
+        })
+        .catch((result) => {
+          console.log(result); //Something went wrong
+        });
+    </script>
+  </body>
+</html>
