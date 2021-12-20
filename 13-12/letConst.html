@@ -1,0 +1,46 @@
+<!-- let declares variables that are limited to scope of block statement {}
+    const : works like let, but must be immediately initialized before
+being used and can never be modified. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+
+    </div>
+    <script>
+
+        var num = 10;
+        
+        for (let num =0; num < 12; num++) {
+            //block of code
+            //statement
+        }
+        //num is 10 here
+        document.getElementById("demo").innerHTML = num;
+        
+        f()
+        function f() {
+            let x;
+            {
+                //block scoped name
+                const x = "scope";
+                //error, const
+                x = "block";
+            }
+            // error, already declared in block
+            let x = "inner";    
+            //redeclaration is not allowed using let, even if first it is decleraed using var and vice-versa
+        }
+    </script>
+</body>
+</html>
+
+<!-- 
+Note : functions are hoisted to the top of the containing block. 
+But the function expressions that use let are not hoisted. -->

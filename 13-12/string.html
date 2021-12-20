@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var string1 = "Javascript Strings "
+        var string2 = "String operator"
+
+        //document.write(string1 + string2)
+        console.log(string1 + string2)
+
+
+        // var user = prompt(" name : ");
+        // alert(user)
+
+        let str = "Python Java Go"
+
+        let part1 = str.slice(7);
+
+        let part2 = str.slice(-12);
+        console.log(part1, part2);
+
+        let sub1 = str.substring(7, 13);    //same to slice but no -ve indexes
+        console.log(sub1);
+        let sub2 = str.substr(-4);          //same to slice but 2nd param for lenth of extracted
+        console.log(sub2);
+
+        let txt = "    Hello World!      ";
+        txt.trim()    // Returns "Hello World!"
+        console.log(txt.trim() );
+
+        const arr = str.split(",");
+        console.log(arr);
+
+
+        console.log(str.indexOf("Java"));
+
+        //1
+        var x = 15 + 5 // 20
+
+        //2
+        var y = "hi"
+        var z = x + y // 20hi
+
+        //3
+        var y = "hi" + 15 + 5 // hi155
+    </script>
+</body>
+</html>
+
